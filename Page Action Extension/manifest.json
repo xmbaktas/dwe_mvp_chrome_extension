@@ -1,0 +1,45 @@
+{
+    "manifest_version":3,
+    "name":"Page Font Style Extension",
+    "version":"1",
+    "description":"Changes font style on specific page",
+    "icons":{
+        "128":"icon128.png",
+        "64" :"icon64.png",
+        "16" :"icon16.png"
+    },
+
+    "action":{
+        "default_icon":"icon16.png",
+        "default_popup":"popup.html",
+        "default_title":"PageFontStyle"
+    },
+
+    "background": {
+        "service_worker": "eventPage.js"
+        
+    },
+
+    "content_scripts":[
+        {
+        "matches":["https://cloud.uipath.com/*"],
+        "js":["content.js"],
+        "css":["content.css"]
+        
+        } 
+        
+    ],
+
+    "permissions":[
+        "tabs"
+        
+    ],
+
+    "host_permissions":[
+        "https://cloud.uipath.com/*"
+    ]
+
+  
+  
+    
+}
